@@ -19,6 +19,26 @@
         <h1 class="main-title">
           <span class="main-title-gradient">Snackbar</span>
         </h1>
+        <form class="form">
+  <label class="delay-item">
+    Delay (ms)
+    <input class="delay-field" type="number" name="delay" required />
+  </label>
+
+  <fieldset class="state-fildset">
+    <legend>State</legend>
+    <label class="radio-option">
+      <input type="radio" name="state" value="fulfilled" required />
+      Fulfilled
+    </label>
+    <label>
+      <input class="radio-option" type="radio" name="state" value="rejected" required />
+      Rejected
+    </label>
+  </fieldset>
+
+  <button class="notification-button" type="submit">Create notification</button>
+</form>
         <load src="./partials/back-link.html" />
       </div>
     </main>

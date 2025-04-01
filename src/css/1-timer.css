@@ -36,7 +36,7 @@ line-height: 1.5;
 color: #2e2f42;
 }
 
-button {
+.timer-button {
   border-radius: 8px;
 padding: 8px 16px;
 width: 75px;
@@ -48,12 +48,12 @@ height: 40px;
   cursor: pointer;
 }
 
-button:hover {
+.timer-button:hover {
    background-color: #6c8cff;
 }
 
 
-button.disabled {
+.timer-button.disabled {
   background-color: #cfcfcf;
   cursor: default;
 }
