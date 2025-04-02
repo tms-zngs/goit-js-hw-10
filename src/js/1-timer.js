@@ -86,7 +86,10 @@ class Timer {
         if (isTimerActive) {
             return;
         }
-        isTimerActive = true;
+      isTimerActive = true;
+      
+      input.setAttribute('disabled', 'true');
+
         this.intervalId = setInterval(() => {
             const now = new Date();
             const timeLeft = selectedDate - now;
@@ -110,10 +113,13 @@ class Timer {
 
     stop() {
         clearInterval(this.intervalId);
-        isTimerActive = false;
-        startButton.classList.remove('disabled');
+      isTimerActive = false;
+      startButton.disabled = false;
+      startButton.classList.remove('disabled');
 
-        iziToast.success({
+      input.removeAttribute('disabled');
+
+      iziToast.success({
       message: 'Timer has ended!',
       layout: 2,
       position: 'topRight',
@@ -130,34 +136,3 @@ startButton.addEventListener("click", () => {
       startButton.classList.add('disabled');
   }
 });
-
-
-console.log(timer.convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(timer.convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(timer.convertMs(24140000)); // {days: 0, hours: 6, minutes: 42, seconds: 20}
-// class timer {
-//     start() {
-//         const startTime = userSelectedDate;
-//     }
-// }
-
-
-//  start(selectedDate) {
-//     this.intervalId = setInterval(() => {
-//       const now = new Date();
-//       const timeLeft = targetDate - now;
-
-//       if (timeLeft <= 0) {
-//         this.stop();
-//         return;
-//       }
-
-//       const timeComponents = this.convertMs(timeLeft);
-//       console.log(timeComponents); // Проверяем в консоли
-//     }, 1000);
-//   }
-
-//   stop() {
-//     clearInterval(this.intervalId);
-//   }
-// }
